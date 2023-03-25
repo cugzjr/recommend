@@ -26,10 +26,8 @@ public class recommendtest {
 
     @Test
     public void createPojo(){
-        User user = new User();
-        user.setUserId(4);
-        user.setName("121");
-        userRespository.save(user);
+        Product product = productRespository.findByProductId(4);
+        System.out.print(product.getName());
     }
     @Test
     public void createRelation(){
@@ -54,5 +52,14 @@ public class recommendtest {
         productRespository.save(product);
         BuyRelation buyRelation = BuyRelation.builder().user(user).product(product).relation("购买").build();
         buyRespository.save(buyRelation);
+    }
+
+    @Test
+    public void update(){
+        User user = userRespository.findByUserId(2);
+        user.setName("朱萌");
+        User user1 = userRespository.updateByNode(user);
+        if(user1 != null) System.out.println(1);
+        else System.out.println(0);
     }
 }

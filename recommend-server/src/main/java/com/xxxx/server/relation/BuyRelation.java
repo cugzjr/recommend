@@ -10,17 +10,13 @@ import org.neo4j.ogm.annotation.*;
 @RelationshipEntity(type = "购买")
 @Builder
 public class BuyRelation {
-
     @Id
     @GeneratedValue
     private Long id;
-
     @StartNode
     private User user;
-
     @EndNode
     private Product product;
-
     @Property
     private String relation;
 }
