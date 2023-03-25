@@ -4,7 +4,6 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>recommend-server</module>
-        <module>recommendSystem</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
